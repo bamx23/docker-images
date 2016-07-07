@@ -9,8 +9,10 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
         pkgconfig \
         freetype-dev \
         py-numpy-dev@testing \
+        ca-certificates \
+    && update-ca-certificates \
     && curl -fSL 'https://bootstrap.pypa.io/get-pip.py' | python \
-    && pip install --no-cache-dir numpy matplotlib scipy \
+    && pip install --no-cache-dir setuptools numpy matplotlib scipy \
     && find /usr/local -depth \
         \( \
             \( -type d -a -name test -o -name tests \) \
