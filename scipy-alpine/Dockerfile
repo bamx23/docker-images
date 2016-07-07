@@ -17,6 +17,9 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
             -o \
             \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
         \) -exec rm -rf '{}' + \
+    && apk add --virtual .python-deps \
+        python \
+        py-numpy \
     && apk del \
         curl \
         g++ \
