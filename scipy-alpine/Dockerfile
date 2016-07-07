@@ -20,6 +20,8 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
     && apk add --virtual .python-deps \
         python \
         py-numpy \
+        freetype \
+        libpng \
     && apk del \
         curl \
         g++ \
